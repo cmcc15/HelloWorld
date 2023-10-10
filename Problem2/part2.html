@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
   <head>
     <meta charset="utf-8">  
-    <title>Note App</title>
+    <title>Notes App</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="script.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   </head>
-  
   <body>
     <div class="popup-box">
       <div class="popup">
@@ -19,27 +17,28 @@
           </header>
           <form action="#">
             <div class="row title">
-              <label>Title of Note</label>
+              <label>Title</label>
               <input type="text" spellcheck="false">
             </div>
-			
             <div class="row description">
-              <label>Description of Note</label>
+              <label>Description</label>
               <textarea spellcheck="false"></textarea>
             </div>
-			
-            <button></button>
+			<input id = "colorpicker" type = "color">
+			<button onclick = "changecolor();"> Change Color </button>
           </form>
         </div>
       </div>
     </div>
-	
     <div class="wrapper">
       <li class="add-box">
         <div class="icon"><i class="uil uil-plus"></i></div>
-        <p>Add new note</p>
+        <p>Add a new note</p>
       </li>
     </div>
+    <script src="script.js"></script>
+	
+	
     
   </body>
 </html>
