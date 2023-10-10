@@ -1,3 +1,4 @@
+/* Import Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -6,11 +7,11 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  background: #FFFFFF;
+  background: black;
 }
 ::selection{
-  color: #33FF36;
-  background: FFFFFF;
+  color: black;
+  background: white;
 }
 .wrapper{
   margin: 50px;
@@ -21,9 +22,9 @@ body{
 .wrapper li{
   height: 250px;
   list-style: none;
-  background: #0E0ED1;
   border-radius: 5px;
   padding: 15px 20px 20px;
+  background: white;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 .add-box, .icon, .bottom-content, 
@@ -40,14 +41,14 @@ body{
 .add-box .icon{
   height: 78px;
   width: 78px;
-  color: #FFFFFF;
+  color: black;
   font-size: 40px;
   border-radius: 50%;
   justify-content: center;
-  border: 2px dashed #FFFFFF0;
+  border: 2px dashed white;
 }
 .add-box p{
-  color: #FFFFFF;
+  color: black;
   font-weight: 500;
   margin-top: 20px;
 }
@@ -70,12 +71,12 @@ body{
 }
 .note .details:hover::-webkit-scrollbar-track,
 .popup textarea:hover::-webkit-scrollbar-track{
-  background: #FFFFFF;
+  background: #f1f1f1;
   border-radius: 25px;
 }
 .note .details:hover::-webkit-scrollbar-thumb,
 .popup textarea:hover::-webkit-scrollbar-thumb{
-  background: #FFFFFF;
+  background: #e6e6e6;
   border-radius: 25px;
 }
 .note p{
@@ -84,7 +85,7 @@ body{
 }
 .note span{
   display: block;
-  color: #FFFFFF;
+  color: #575757;
   font-size: 16px;
   margin-top: 5px;
 }
@@ -93,14 +94,14 @@ body{
   border-top: 1px solid #ccc;
 }
 .bottom-content span{
-  color: #FFFFFF;
+  color: #6D6D6D;
   font-size: 14px;
 }
 .bottom-content .settings{
   position: relative;
 }
 .bottom-content .settings i{
-  color: #FFFFFF;
+  color: #6D6D6D;
   cursor: pointer;
   font-size: 15px;
 }
@@ -109,7 +110,7 @@ body{
   bottom: 0;
   right: -5px;
   padding: 5px 0;
-  background: #FFFFFF;
+  background: #fff;
   position: absolute;
   border-radius: 4px;
   transform: scale(0);
@@ -134,7 +135,7 @@ body{
   margin-bottom: 0;
 }
 .menu li:hover{
-  background: #A2A0A;
+  background: #f5f5f5;
 }
 .menu li i{
   padding-right: 8px;
@@ -172,7 +173,7 @@ body{
 }
 .popup .content{
   border-radius: 5px;
-  background: #A2A0A;
+  background: #fff;
   width: calc(100% - 15px);
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
@@ -185,7 +186,7 @@ body{
   font-weight: 500;
 }
 .content header i{
-  color: #A2A0A;
+  color: #8b8989;
   cursor: pointer;
   font-size: 23px;
 }
@@ -220,13 +221,13 @@ form .row textarea{
 form button{
   width: 100%;
   height: 50px;
-  color: #A2A0A;
+  color: #fff;
   outline: none;
   border: none;
   cursor: pointer;
   font-size: 17px;
   border-radius: 4px;
-  background: #A2A0A;
+  background: #6A93F8;
 }
 @media (max-width: 660px){
   .wrapper{
