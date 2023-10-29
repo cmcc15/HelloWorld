@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub User Info</title>
+    <link rel="stylesheet" href="part3.css">
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter GitHub Username">
+    <button onclick="searchUser()">Search</button>
+	<h1>GitHub User Information</h1>
+    <div id="user-info">
+        <img id="avatar" src="" alt="User Avatar">
+		<h2>User Profile</h2>
+        <p id="name"></p>
+		<p id="UName"></p>
+        <p id="bio"></p>
+        <p id="email"></p>
+        <p id="location"></p>
+        <p id="gistsCount"></p>
+		
+		<br>
+        <div id="repos">
+            <h2>User Repositories:</h2>
+            <ul id="repo-list">
+            </ul>
+        </div>
+    </div>
+    <script src="part3.js"></script>
+</body>
+</html>
