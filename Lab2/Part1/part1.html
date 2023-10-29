@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phone Directory</title>
+	<link rel="stylesheet" href="part1.css">
+</head>
+<body>
+    <h1>Phone Directory</h1>
+    
+    <div id="error" style="color: red; display: none;"></div>
+    
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="mobile" placeholder="Mobile">
+    <input type="text" id="email" placeholder="Email">
+    <button id="addContact">Add Contact</button>
+    
+    <input type="text" id="search" placeholder="Search by Mobile">
+    
+    <table id="contacts">
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+        </tr>
+    </table>
+    
+    <div id="noResult" style="color: red; display: none;">No matching contacts found.</div>
+    
+    <script>
+        const contacts = [];
+
+        function validateEmail(email) {
+            return true;
+        }
+
+        function validateName(name) {
+            return /^[A-Za-z\s]{1,20}$/.test(name);
+        }
+
+        function validateMobile(mobile) {
+            return /^[0-9]{10}$/.test(mobile);
+        }
+
+        function addContact() {
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const email = document.getElementById('email').value;
+            
+            if (!name || !mobile || !email) {
+                document.getElementById('error').textContent = 'All fields are required.';
+                document.getElementById('error').style.display = 'block';
+                return;
+            }
+
+            if (!validateName(name) || !validateMobile(mobile) || !validateEmail(email)) {
+                document.getElementById('error').textContent = 'Invalid input format.';
+                document.getElementById('error').style.display = 'block';
+                return;
+            }
+
+            contacts.push({ name, mobile, email });
+
+            document.getElementById('name').value = '';
+            document.getElementById('mobile').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('error').style.display = 'none';
+
+            displayContacts();
+        }
+
+        function displayContacts() {
+            const table = document.getElementById('contacts');
+            table.innerHTML = '<tr><th>Name</th><th>Mobile</th><th>Email</th></tr>';
+
+            contacts.forEach((contact, index) => {
+                const row = table.insertRow();
+                row.style.backgroundColor = index % 2 === 0 ? '#f2f2f2' : 'white';
+                row.insertCell(0).textContent = contact.name;
+                row.insertCell(1).textContent = contact.mobile;
+                row.insertCell(2).textContent = contact.email;
+            });
+        }
+
+        let sortAscending = true;
+        function sortContacts() {
+            contacts.sort((a, b) => {
+                const nameA = a.name.toLowerCase();
+                const nameB = b.name.toLowerCase();
+                if (nameA < nameB) return sortAscending ? -1 : 1;
+                if (nameA > nameB) return sortAscending ? 1 : -1;
+                return 0;
+            });
+
+            sortAscending = !sortAscending;
+            displayContacts();
+        }
+
+        function searchContacts() {
+            const searchTerm = document.getElementById('search').value;
+            const filteredContacts = contacts.filter(contact => contact.mobile.includes(searchTerm));
+            displayContacts();
+            document.getElementById('noResult').style.display = filteredContacts.length === 0 ? 'block' : 'none';
+        }
+
+        document.getElementById('addContact').addEventListener('click', addContact);
+        document.getElementById('contacts').addEventListener('click', sortContacts);
+        document.getElementById('search').addEventListener('input', searchContacts);
+		
+		function displayContacts() {
+			const table = document.getElementById('contacts');
+			table.innerHTML = '<tr><th>Name</th><th>Mobile</th><th>Email</th></tr>';
+
+			contacts.forEach((contact, index) => {
+				const row = table.insertRow();
+        
+				if (index % 2 === 0) {
+					row.style.backgroundColor = '#f2f2f2';
+				}
+        
+				row.insertCell(0).textContent = contact.name;
+				row.insertCell(1).textContent = contact.mobile;
+				row.insertCell(2).textContent = contact.email;
+			});
+		}
+    </script>
+</body>
+</html>
