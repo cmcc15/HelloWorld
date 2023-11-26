@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Simple Note App</title>
+</head>
+<body>
+
+<div id="app">
+  <div id="note-container"></div>
+  <div id="controls">
+    <textarea id="note-input" placeholder="Type your note here..."></textarea>
+    <button id="add-edit-button">Add/Edit Note</button>
+    <button id="delete-button">Delete Note</button>
+    <label for="color-selector">Select Color:</label>
+    <select id="color-selector">
+      <option value="#3498db">Blue</option>
+      <option value="#e74c3c">Red</option>
+      <option value="#2ecc71">Green</option>
+      <option value="#f39c12">Yellow</option>
+      <option value="#9b59b6">Purple</option>
+      <option value="#1abc9c">Turquoise</option>
+    </select>
+    <button id="color-button">Change Color</button>
+  </div>
+
+  <!-- Add RxJS from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.4.0/rxjs.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.4.0/operators.umd.min.js"></script>
+<script src="script.js"></script>
+</div>
+
+</body>
+</html>
+
